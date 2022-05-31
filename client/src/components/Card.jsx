@@ -1,6 +1,11 @@
 import React from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import MyDropzone from './MyDropzone'
 function Card() {
+  const notify = () => toast("Wow so easy!");
+
   return (
     <>
       <div className="card w-96 bg-base-100 shadow-xl ">
@@ -12,6 +17,8 @@ function Card() {
           <button className="btn btn-primary btn-sm text-xs">Choose a file</button>
         </div>
       </div>
+      <button onClick={notify}>Notify!</button>
+      <ToastContainer />
     </>
   );
 }

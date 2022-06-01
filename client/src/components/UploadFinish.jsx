@@ -1,5 +1,6 @@
 import React from "react";
 import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
+const HOST = import.meta.env.VITE_URL;
 
 function UploadFinish({ image_link }) {
   const img_link = HOST + "/Images/" + image_link;

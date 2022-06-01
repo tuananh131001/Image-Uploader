@@ -26,7 +26,7 @@ function Card() {
       })
       .catch((err) => {
         setLoading(false);
-        setSuccess(false);
+        setSucess(false);
         error("Could not upload image");
       });
   };

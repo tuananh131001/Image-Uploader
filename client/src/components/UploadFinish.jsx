@@ -2,6 +2,7 @@ import React from "react";
 import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
 
 function UploadFinish({ image_link }) {
+  const img_link = "http://localhost:5000/Images/" + image_link;
   return (
     <div>
       {" "}
@@ -11,15 +12,22 @@ function UploadFinish({ image_link }) {
             <IoCheckmarkDoneCircleSharp></IoCheckmarkDoneCircleSharp>
           </figure>
           <h1 className=" font-bold">Uploaded Successfully!</h1>
-
+          <img src={img_link} alt="image" />
           <div className="flex ">
             <input
               type="text"
               placeholder="You can't touch this"
               className="input input-bordered w-full max-w-xs"
-              disabled
+              value={img_link}
             />
-            <button className="btn btn-primary">Copy Link</button>
+            <button
+              className="btn btn-primary "
+              onClick={() => {
+                navigator.clipboard.writeText(img_link);
+              }}
+            >
+              Copy Link
+            </button>
           </div>
         </div>
       </div>

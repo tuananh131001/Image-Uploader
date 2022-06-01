@@ -8,7 +8,6 @@ router.get("/", async function (req, res) {
   await res.render("index");
 });
 router.post("/", upload.single("image"), async function (req, res) {
-  console.log(res.req.file.filename);
   return res.status(200).json({ image_link: res.req.file.filename });
 });
 module.exports = router;

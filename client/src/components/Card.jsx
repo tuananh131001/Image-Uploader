@@ -27,7 +27,7 @@ function Card() {
       .catch((err) => {
         setLoading(false);
         setSucess(false);
-        error("Could not upload image");
+        toast.error("Could not upload image");
       });
   };
   const onDrop = useCallback((acceptedFiles) => {

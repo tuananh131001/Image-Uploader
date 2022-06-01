@@ -11,6 +11,16 @@ function UploadFinish() {
             <IoCheckmarkDoneCircleSharp></IoCheckmarkDoneCircleSharp>
           </figure>
           <h1 className=" font-bold">Uploaded Successfully!</h1>
+
+          <div className="flex ">
+            <input
+              type="text"
+              placeholder="You can't touch this"
+              class="input input-bordered w-full max-w-xs"
+              disabled
+            />
+            <button className="btn btn-primary">Copy Link</button>
+          </div>
         </div>
       </div>
     </div>

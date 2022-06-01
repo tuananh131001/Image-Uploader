@@ -12,8 +12,8 @@ function Card() {
 
   // Custom function to handle file upload for both drag and button oploads
   const handleImageUpload = () => {
-    setLoading(true);
-    setSucess(false);
+    // setLoading(true);
+    setSucess(true);
   };
   const onDrop = useCallback((acceptedFiles) => {
     handleImageUpload();

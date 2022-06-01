@@ -6,7 +6,7 @@ import UploadLoading from "./UploadLoading";
 import UploadFinish from "./UploadFinish";
 import ImageUpload from "./ImageUpload";
 import axios from "axios";
-
+const HOST = import.meta.env.VITE_URL;
 function Card() {
   const [loading, setLoading] = useState(false);
   const [success, setSucess] = useState(false);
@@ -18,7 +18,7 @@ function Card() {
     const data = new FormData();
     data.append("image", file[0]);
     axios
-      .post("http://localhost:5000/upload/", data)
+      .post(HOST + "/upload/", data)
       .then((res) => {
         setSucess(true);
         setLoading(false);

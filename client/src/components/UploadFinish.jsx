@@ -2,7 +2,7 @@ import React from "react";
 import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
 
 function UploadFinish({ image_link }) {
-  const img_link = "http://localhost:5000/Images/" + image_link;
+  const img_link = HOST + "/Images/" + image_link;
   return (
     <div>
       {" "}

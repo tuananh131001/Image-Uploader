@@ -1,7 +1,7 @@
 import React from "react";
 import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
 
-function UploadFinish() {
+function UploadFinish({ image_link }) {
   return (
     <div>
       {" "}
@@ -16,7 +16,7 @@ function UploadFinish() {
             <input
               type="text"
               placeholder="You can't touch this"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
               disabled
             />
             <button className="btn btn-primary">Copy Link</button>

@@ -5,18 +5,28 @@ import { useDropzone } from "react-dropzone";
 import UploadLoading from "./UploadLoading";
 import UploadFinish from "./UploadFinish";
 import ImageUpload from "./ImageUpload";
+import axios from "axios";
 
 function Card() {
   const [loading, setLoading] = useState(false);
   const [success, setSucess] = useState(false);
+  const [imageUrl, setImageUrl] = useState("");
 
   // Custom function to handle file upload for both drag and button oploads
-  const handleImageUpload = () => {
-    // setLoading(true);
-    setSucess(true);
+  const handleImageUpload = (file) => {
+    setLoading(true);
+    const data = new FormData();
+    data.append("image", file[0]);
+    axios.post("http://localhost:5000/upload/", data).then((res) => {
+      setSucess(true);
+      setLoading(false);  
+      setImageUrl(res.data.image_link)
+    });
   };
   const onDrop = useCallback((acceptedFiles) => {
-    handleImageUpload();
+    let file = acceptedFiles[0];
+    console.log(file);
+    handleImageUpload(acceptedFiles);
   }, []);
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
@@ -25,7 +35,7 @@ function Card() {
       {loading ? (
         <UploadLoading />
       ) : success ? (
-        <UploadFinish />
+        <UploadFinish image_link={imageUrl}/>
       ) : (
         <div className="card w-96 bg-base-100 shadow-xl ">
           <div className=" text-center flex flex-col items-center gap-9 px-4 py-10">

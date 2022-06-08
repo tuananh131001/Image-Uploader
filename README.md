@@ -2,6 +2,13 @@
 
 ![image](https://user-images.githubusercontent.com/67695658/171417921-e3b21a47-2c69-4ed3-b983-518283ae400f.png)
 
+# WHAT HAVE LEARNED
+- All hooks
+- dealing with local image
+- query subdocument
+- pass lots of props
+- axios
+
 # Setup Backend on heroku
 Step 1: create app and connect to github repo
 Step 2: Config like this

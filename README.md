@@ -5,11 +5,16 @@
 # Setup Backend on heroku
 Step 1: create app and connect to github repo
 Step 2: Config like this
+
+https://github.com/timanovsky/subdir-heroku-buildpack.git
+
 ![image](https://user-images.githubusercontent.com/67695658/171414022-b1f005f8-09f2-42b4-ad18-0caf377c26fd.png)
 
 ![image](https://user-images.githubusercontent.com/67695658/171414175-a18e30aa-5d20-45c5-87df-53198572519c.png)
 
 Step 3: Add Procfile 
+
+web: node index.js
 
 ![image](https://user-images.githubusercontent.com/67695658/171417038-b074dce2-67eb-41ec-974f-4b0dc2492c56.png)
 
